@@ -58,7 +58,7 @@ export const createArticles = async (
   }
 
   // ✅ Fix: Find the actual user using `clerkUserId` and get their `id`
-  const existingUser = await prisma.user.findUnique({
+  const existingUser = await prisma.user.findFirst({
     where: { clerkUserId: userId },
   });
 
